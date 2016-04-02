@@ -3,5 +3,13 @@
  */
 public class Mask extends Adress {
 
+    private int cidr;
 
+    private void setMaskUsingCidr(int cidr){
+
+    }
+
+    public boolean isMaskValid(){
+        return false;
+    }
 }

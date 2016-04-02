@@ -5,7 +5,23 @@ import java.util.ArrayList;
  */
 public class Bite {
 
-    ArrayList<Bit> bite;
-    int decValue ;
+    private ArrayList<Bit> bite;
+    private int decValue ;
 
+
+
+    public int getDecValue(){
+        return decValue;
+    }
+    public boolean areBitsContigous(){
+        return true;
+    }
+
+
+    private void setDecValue(ArrayList<Bit> bite){
+        decValue = 666;
+    }
+    private void setBite(int decValue){
+
+    }
 }

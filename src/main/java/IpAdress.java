@@ -3,5 +3,11 @@
  */
 public class IpAdress extends Adress{
 
+    public boolean isIpAdressValid(){
+        return false ;
+    }
+
+
+
 
 }

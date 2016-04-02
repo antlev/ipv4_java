@@ -6,11 +6,15 @@ import java.util.ArrayList;
  */
 public abstract class Adress {
 
-    ArrayList<Bite> Bites ;
+    private ArrayList<Bite> bites ;
 
     // Constructor
     public Adress(){
 
+    }
+
+    private Bite getBite(short biteNum){
+        return this.bites.get(biteNum);
     }
 
     public void saveAdress(){

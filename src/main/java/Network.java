@@ -3,11 +3,11 @@
  */
 public class Network {
 
-    IpAdress networkAdress;
-    IpAdress broadcastAdress;
-    IpAdress firstAvailableAdress;
-    IpAdress lastAvailableAdress;
-    Mask mask ;
-    int nbAdressAvailable;
+    private IpAdress networkAdress;
+    private IpAdress broadcastAdress;
+    private IpAdress firstAvailableAdress;
+    private IpAdress lastAvailableAdress;
+    private Mask mask ;
+    private int nbAdressAvailable;
 
 }
