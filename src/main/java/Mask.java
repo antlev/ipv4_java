@@ -10,8 +10,11 @@ public class Mask extends Adress {
     public Mask(ArrayList<Bite> bites){
         super(bites);
         setCidr(bites);
-
     }
+//    public Mask(short cidr){
+//        this.cidr = cidr ;
+//
+//    }
 
     private void setCidr(ArrayList<Bite> bites){
         this.cidr = 0 ;

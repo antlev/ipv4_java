@@ -10,11 +10,13 @@ public class Bite {
 
 
     public Bite(ArrayList<Bit> bite){
+        this.bite = bite;
         setDecValue(bite);
     }
 
     public Bite(int decValue){
-        setBite(decValue);
+        this.bite = new ArrayList<Bit>();
+        this.decValue = decValue;
     }
 
     public boolean isValid(){
@@ -23,6 +25,10 @@ public class Bite {
         } else {
             return false;
         }
+    }
+
+    public void printBite(){
+        System.out.print(decValue);
     }
 
 
