@@ -25,6 +25,7 @@ public class Bite {
         }
     }
 
+
     public int getDecValue(){
         return decValue;
     }
@@ -32,14 +33,40 @@ public class Bite {
         return bite;
     }
 
-    public boolean areBitsContigous(){
-        short bitVal = bite.get(0).getBitValue();
-        for(int i=1;i<bite.size();++i){
-            if(true){
-                //TODO
+    /**
+     * Return 0 if all bits are 0, Return 1 if all bits are 1,
+     * Return 2 if bits are 0 and 1 but contiguous, else Return -1
+     * @return
+     */
+    public short areBitsContiguous(){
+        short lastVal = bite.get(0).getBitValue();
+        short change = 0 ; // Is incremented if 2 consecutive bits are different
+
+        short nbZero = 0,nbOne = 0;
+
+        for(int i=0;i<bite.size();++i){
+            if(bite.get(i).getBitValue() == 0){
+                if(lastVal != bite.get(i).getBitValue()){
+                    change++;
+                    lastVal = bite.get(i).getBitValue();
+                }
+                nbZero++;
+            } else if(bite.get(i).getBitValue() == 1){
+                if(lastVal != bite.get(i).getBitValue()){
+                    change++;
+                    lastVal = bite.get(i).getBitValue();
+                }
+                nbOne++;
             }
+        } if(nbZero == 8){
+            return 0;
+        } else if(nbOne == 8){
+            return 1;
+        } else if (change == 1){
+            return 2 ;
+        } else {
+            return -1;
         }
-        return true;
     }
 
 

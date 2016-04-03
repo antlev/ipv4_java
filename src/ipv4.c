@@ -132,11 +132,10 @@ main(){
             do{
                 printf("->");
                 scanf("%s",masqueChar100); // On demande un masque que l'on stock dans masqueChar100
-                n = checkAdress(masqueChar100,1) ; // On vérifie la validité du masque
-                if ( n == 1 ){
+                if ( checkAdress(masqueChar100,1) == 1 ){ // On vérifie la validité du masque
                     memAdress(masqueChar100,masqueDecInt4,masqueBinInt32,1); // Si l'ip est valide on sauvegarde l'ip donné dans le tableau ipDecInt4
                 }
-            } while ( n  != 1);  // tant que l'ip n'est pas valide : reprompt
+            } while ( checkAdress(masqueChar100,1)  != 1);  // tant que l'ip n'est pas valide : reprompt
             break;
             case 2 :     
             printf("************** Saisie du masque : Format CIDR **************\n");

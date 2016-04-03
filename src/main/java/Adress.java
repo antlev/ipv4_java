@@ -26,20 +26,20 @@ public abstract class Adress {
         return this.bites.set(biteNum,biteToSet);
     }
 
-    public Adress nextAdress(){
-        return Adress;
-    }
-    public Adress previousAdress(){
-        return Adress;
-    }
+//    public Adress nextAdress(){
+//        return Adress;
+//    }
+//    public Adress previousAdress(){
+//        return Adress;
+//    }
     public void saveAdress(){
-        try{
-            File file = new File("data_ipv4");
-
-            FileWriter fileWriter = new FileWriter()
-        } catch (IOException e){
-            System.out.println("Ther has been an error while writing into file" + e.getStackTrace() + e.getMessage());
-        }
+//        try{
+//            File file = new File("data_ipv4");
+//
+//            FileWriter fileWriter = new FileWriter()
+//        } catch (IOException e){
+//            System.out.println("Ther has been an error while writing into file" + e.getStackTrace() + e.getMessage());
+//        }
         // TODO
     }
 
