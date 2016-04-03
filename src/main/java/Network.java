@@ -10,4 +10,16 @@ public class Network {
     private Mask mask ;
     private int nbAdressAvailable;
 
+    public Network(){
+
+    }
+
+    private void nextNetwork(){
+
+    }
+    private void previousNetwork(){
+
+    }
+
+
 }

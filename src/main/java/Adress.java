@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -6,23 +9,42 @@ import java.util.ArrayList;
  */
 public abstract class Adress {
 
-    private ArrayList<Bite> bites ;
+    protected ArrayList<Bite> bites ;
 
     // Constructor
-    public Adress(){
-
+    public Adress(ArrayList<Bite> bites){
+        for(int i=0;i<bites.size();++i){
+            this.bites.set(i,bites.get(i));
+        }
     }
 
     private Bite getBite(short biteNum){
         return this.bites.get(biteNum);
     }
 
-    public void saveAdress(){
+    private Bite setBite(short biteNum,Bite biteToSet){
+        return this.bites.set(biteNum,biteToSet);
+    }
 
+    public Adress nextAdress(){
+        return Adress;
+    }
+    public Adress previousAdress(){
+        return Adress;
+    }
+    public void saveAdress(){
+        try{
+            File file = new File("data_ipv4");
+
+            FileWriter fileWriter = new FileWriter()
+        } catch (IOException e){
+            System.out.println("Ther has been an error while writing into file" + e.getStackTrace() + e.getMessage());
+        }
+        // TODO
     }
 
     public void promptAdress(){
-
+        // TODO
     }
 
 
