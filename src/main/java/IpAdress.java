@@ -5,15 +5,5 @@ import java.util.ArrayList;
  */
 public class IpAdress extends Adress{
 
-    public IpAdress(ArrayList<Bite> bites){
-        super(bites);
-    }
-
-    public boolean isIpAdressValid(){
-        return false ;
-    }
-
-
-
 
 }

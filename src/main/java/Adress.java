@@ -12,11 +12,28 @@ public abstract class Adress {
     protected ArrayList<Bite> bites ;
 
     // Constructor
-    public Adress(ArrayList<Bite> bites){
-        this.bites = bites ;
-        for(int i=0;i<bites.size();++i){
-            this.bites.set(i,bites.get(i));
+    public Adress(){
+        bites = new ArrayList<Bite>() ;
+    }
+    /**
+     *
+     * @param bites
+     * @return true if adress has been set, else false
+     */
+    public boolean setAdress(ArrayList<Bite> bites){
+        // We checks that the bites are valid
+        try{
+            for(int i=0;i<bites.size();++i){
+                if(!bites.get(i).isValid()){
+                    return false;
+                }
+            }
+        } catch (Exception e){
+            System.out.println("Array<Bite> invalid");
+            return false ;
         }
+        this.bites = bites ;
+        return true;
     }
 
     private Bite getBite(short biteNum){
@@ -25,6 +42,25 @@ public abstract class Adress {
 
     private Bite setBite(short biteNum,Bite biteToSet){
         return this.bites.set(biteNum,biteToSet);
+    }
+
+    protected boolean isValid(){
+        int biteValid = 0 ;
+        try {
+            for(int i=0;i<bites.size();++i){
+                if(!this.bites.get(i).isValid()){
+                    return false;
+                } else{
+                    biteValid++;
+                }
+            }
+        } catch(Exception e){
+            return false;
+        }
+        if(biteValid == 4 ){
+            return true ;
+        }
+        return false;
     }
 
 //    public Adress nextAdress(){

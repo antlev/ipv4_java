@@ -35,7 +35,7 @@ public class Bite {
     public int getDecValue(){
         return decValue;
     }
-    public ArrayList<Bit> getBite(){
+    public ArrayList<Bit> getBits(){
         return bite;
     }
 
