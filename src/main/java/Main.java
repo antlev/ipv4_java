@@ -26,19 +26,21 @@ public class Main {
         int bitemask1=255,bitemask2=255,bitemask3=0,bitemask4=0;
 
         ArrayList<Bite> bitesMask = new ArrayList<Bite>();
-        bites.add(new Bite(bitemask1));
-        bites.add(new Bite(bitemask2));
-        bites.add(new Bite(bitemask3));
-        bites.add(new Bite(bitemask4));
+        bitesMask.add(new Bite(bitemask1));
+        bitesMask.add(new Bite(bitemask2));
+        bitesMask.add(new Bite(bitemask3));
+        bitesMask.add(new Bite(bitemask4));
 
         Mask mask = new Mask(bitesMask);
         // Saisir un masque : cidr
 //        Mask mask2 = new Mask(24);
 
         // Affichage Ip
+        System.out.printf("ip>");
         ipAdress.printAdress();
         // Affichage Masque
-//        mask.printAdress();
+        System.out.println("mask>");
+        mask.printAdress();
         // Affichage Info
 
 
