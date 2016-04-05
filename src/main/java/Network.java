@@ -11,7 +11,19 @@ public class Network {
     private int nbAdressAvailable;
 
     public Network(){
+        networkAdress = new IpAdress();
+        broadcastAdress = new IpAdress();
+        firstAvailableAdress = new IpAdress();
+        lastAvailableAdress = new IpAdress();
+        mask = new Mask();
+    }
 
+    public void setNetwork(IpAdress adress, Mask mask){
+        nbAdressAvailable = (int) Math.pow(2,32-(mask.getCidr()));
+    }
+
+    private void calcNbAdress(){
+        nbAdressAvailable = (int) Math.pow(2,32-(mask.getCidr()));
     }
 
     private void nextNetwork(){

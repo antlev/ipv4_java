@@ -18,8 +18,12 @@ public class Main {
         bites.add(new Bite(bite3));
         bites.add(new Bite(bite4));
 
-        IpAdress ipAdress = new IpAdress();
-        ipAdress.setAdress(bites);
+        IpAdress ipAdress = null;
+        try {
+            ipAdress = new IpAdress(bites);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         // Saisir un masque : x:y:z:q
@@ -31,11 +35,11 @@ public class Main {
         bitesMask.add(new Bite(bitemask3));
         bitesMask.add(new Bite(bitemask4));
 
-        Mask mask = new Mask();
-        mask.setAdress(bitesMask);
-        // Saisir un masque : cidr
-        Mask mask2 = new Mask();
-        System.out.println("mask2 has been set : "+mask2.setMaskUsingCidr((short)24));
+//        Mask mask = new Mask();
+//        mask.setAdress(bitesMask);
+//        // Saisir un masque : cidr
+//        Mask mask2 = new Mask();
+//        System.out.println("mask2 has been set : "+mask2.setMaskUsingCidr((short)24));
 
         // Affichage Ip
         System.out.printf("ip>");
@@ -44,11 +48,18 @@ public class Main {
             ipAdress.printAdress();
         }
         System.out.println("this adress is valid : " + ipAdress.isValid());
+
+        System.out.println("nextAdress !");
+        try {
+            ipAdress.nextAdress().printAdress();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         // Affichage Masque
-        System.out.println("mask>");
-        mask.printAdress();
-        System.out.println("mask2>");
-        mask2.printAdress();
+//        System.out.println("mask>");
+//        mask.printAdress();
+//        System.out.println("mask2>");
+//        mask2.printAdress();
         // Affichage Info
 
 

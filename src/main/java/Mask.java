@@ -26,7 +26,7 @@ public class Mask extends Adress {
         try{
             for(int i=0;i<4;++i){
                 for(int j=0;j<8;++j){
-                    bites.set(i,new Bite())
+//                    bites.set(i,new Bite());
                     bites.get(i).getBits().set(j,new Bit(valToset,(short)j));
                     cidr--;
                     if(cidr == 0) {

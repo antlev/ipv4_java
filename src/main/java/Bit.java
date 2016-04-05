@@ -27,4 +27,14 @@ public class Bit {
     public void setWeight(short weight) {
         this.weight = weight;
     }
+
+    public boolean increment(){
+        if(bit == 0){
+            bit = 1 ;
+            return false;
+        } else {
+            bit = 0;
+            return true;
+        }
+    }
 }

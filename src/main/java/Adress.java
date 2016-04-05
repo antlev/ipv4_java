@@ -15,6 +15,24 @@ public abstract class Adress {
     public Adress(){
         bites = new ArrayList<Bite>() ;
     }
+
+    public Adress(ArrayList<Bite> bites) throws Exception {
+        // We checks that the bites are valid
+        this.bites = new ArrayList<Bite>() ;
+        try{
+            for(int i=0;i<bites.size();++i){
+                if(!bites.get(i).isValid()){
+                    throw new cantCreateAdressException();
+                }
+            }
+        } catch (Exception e){
+            System.out.println("Array<Bite> invalid");
+            throw new cantCreateAdressException();
+        }
+        for(int i=0;i<4;++i){
+            this.bites.add(i,new Bite(bites.get(i).getDecValue()));
+        }
+    }
     /**
      *
      * @param bites
@@ -32,7 +50,9 @@ public abstract class Adress {
             System.out.println("Array<Bite> invalid");
             return false ;
         }
-        this.bites = bites ;
+        for(int i=0;i<4;++i){
+            this.bites.get(i).setBite(bites.get(i).getDecValue());
+        }
         return true;
     }
 
@@ -63,11 +83,20 @@ public abstract class Adress {
         return false;
     }
 
-//    public Adress nextAdress(){
-//        return Adress;
-//    }
+    public IpAdress nextAdress() throws Exception {
+        IpAdress nextAdress ;
+        for(int i=0;i<bites.size();++i){
+            if(bites.get(i).increment() == false){
+                nextAdress = new IpAdress(bites);
+                return nextAdress;
+            }else if(i == 4){
+                throw new invalidAdressException();
+            }
+        }
+        throw new Exception();
+    }
 //    public Adress previousAdress(){
-//        return Adress;
+//        return new Adress();
 //    }
 
     public void printAdress(){
@@ -89,5 +118,18 @@ public abstract class Adress {
     }
 
 
+    public class invalidAdressException extends Exception{
+
+        public invalidAdressException(){
+            super();
+        }
+    }
+
+    public class cantCreateAdressException extends Exception{
+
+        public cantCreateAdressException(){
+            super();
+        }
+    }
 
 }

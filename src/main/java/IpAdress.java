@@ -5,5 +5,10 @@ import java.util.ArrayList;
  */
 public class IpAdress extends Adress{
 
+    public IpAdress() {
+    }
 
+    public IpAdress(ArrayList<Bite> bites) throws Exception {
+        super(bites);
+    }
 }

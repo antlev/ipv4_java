@@ -83,7 +83,7 @@ public class Bite {
         }
     }
 
-    private void setBite(int decValue){
+    public void setBite(int decValue){
         for (int i=0;i<bite.size();++i){
             if(decValue >= Math.pow(2,(7-i))){
                 bite.set(7-i,new Bit((short) 1,(short) (7-i)));
@@ -91,6 +91,14 @@ public class Bite {
                 bite.set(7-i,new Bit((short) 0, (short) (7-i)));
             }
         }
+    }
 
+    public boolean increment(){
+        for(int i=0;i<bite.size();++i){
+            if(bite.get(i).increment() == false){
+                return false;
+            }
+        }
+        return true;
     }
 }
